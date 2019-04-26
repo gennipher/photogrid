@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo");
-
 * {
     box-sizing: border-box;
     max-width: 100%;
@@ -9,7 +7,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arvo', serif; 
-    background: #f5f4f4;
+    background: #faeddf;
+    font-family: 'Arvo', serif;
 }
 
 header {
@@ -19,6 +18,8 @@ header {
     max-width: 992px;
 }
 
+/* Header photo */
+
 header .profile__photo {
     width: 150px;
 }
@@ -27,6 +28,12 @@ header .profile__photo img {
     width: 100%;
     border-radius: 50%; /* Deixa a foto arredondada */
 }
+
+.profile__photo img:hover {
+    transform: scale(1.05);
+}
+
+/* Header About */
 
 header .about {
     margin: 10px;
@@ -40,6 +47,7 @@ header .about p {
     font-size: 16px;
 }
 
+/*Content*/
 
 .container {
     max-width: 992px; /* Largura máxima do elemento */ 
@@ -61,6 +69,7 @@ header .about p {
 
 .item:hover {
     transform: scale(1.05); /* ao passar o mouse, o transform scale aumenta o tamanho da imagem*/
+    transform: skewY(5deg); 
 }
 
 .item .item__details {
@@ -72,6 +81,46 @@ header .about p {
     vertical-align: bottom;
 }
 
+/* Footer */
+
 footer {
     text-align: center;
+}
+
+/* mobile first!*/
+
+@media (min-width: 768px) {
+    header {
+        justify-content: start;
+    }
+
+    header .profile__photo {
+        margin: 0 60px 0 30px;
+    }
+
+    .profile__photo img {
+        opacity: 0.5;
+    }
+    
+    .profile__photo img:hover {
+        opacity: 1;
+        transform: none;
+    }
+
+    header .about {
+        margin: 0;
+    }
+
+    header .about h1 {
+        font-size: 32px;
+    }
+
+    .item {
+        opacity: 0.5; 
+    }
+
+    .item:hover {
+        opacity: 1; 
+        transform: none;
+    }
 }
