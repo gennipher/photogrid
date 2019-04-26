@@ -2,13 +2,16 @@
     box-sizing: border-box;
   }
 
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Arvo', serif; 
     background: #f5f4f4;
-  }
+}
 
 header {
     display: flex;
@@ -17,14 +20,14 @@ header {
     max-width: 992px;
 }
 
-header .profile_photo {
-    margin: 20px;
-    max-width: 300px;
+header .profile__photo {
+    max-width: 20px;
 }
 
-header .profile_photo img {
-    width: 300px;
-    border-radius: 50%;
+
+header .profile__photo img {
+    width: 100%;
+    border-radius: 50%; /* Deixa a foto arredondada */
 }
 
 header .about {
@@ -37,4 +40,40 @@ header .about h1 {
 
 header .about p { 
     font-size: 16px;
+}
+
+
+.container {
+    max-width: 992px; /* Largura máxima do elemento */ 
+    margin: 0 auto; /* Para deixar os elementos centralizados horizontalmente, usamos margin 0 auto além do width ou max-width */
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap; /* Define se os itens vão quebrar ou não de linha */
+    justify-content: center; /* Centralizar os elementos */
+}
+
+.item { /* Aqui não precisa de display flex, pois já foi declarado no pai (div grid)*/
+    cursor: pointer;
+    flex-direction: column; /* determina a estrutura do elemento com flexbox, se será row ou column */
+    padding: 15px;
+    transition: transform 0.3s ease-in-out; /* Cria uma animação ao passar o mouse na foto. O transform e o ease-in-out nos permite criar uma transição do hover suave e fluída */
+}
+
+.item:hover {
+    transform: scale(1.05); /* ao passar o mouse, o transform scale aumenta o tamanho da imagem*/
+}
+
+.item .item__details {
+    font-size: 13px;
+}
+
+.item .item__details img {
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+footer {
+    text-align: center;
 }
